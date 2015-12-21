@@ -1,0 +1,12 @@
+one:
+  follower: rahul
+  followed: lana
+two:
+  follower: rahul
+  followed: mallory
+three:
+  follower: lana
+  followed: rahul
+four:
+  follower: hombalappa
+  followed: rahul

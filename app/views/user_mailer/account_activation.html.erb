@@ -1,0 +1,7 @@
+<h1>Acconut ACtivation for 5S Portal</h1>
+<p>Hi <%= @user.name %>,</p>
+<p>
+  Welcome to the Shingo Institute 5S Application! Click on the link below to activate your account:
+</p>
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
