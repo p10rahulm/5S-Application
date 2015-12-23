@@ -15,6 +15,6 @@
 //= require bootstrap
 //= require turbolinks
 //= require rails.validations
-
+//= require tinymce
 //= require_tree
 
