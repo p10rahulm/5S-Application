@@ -22,7 +22,7 @@ end
 
 #microposts seed
 users = User.order(:created_at).take(6)
-50.times do
+10.times do
   content = Faker::Lorem.sentence(5)
   users.each { |user| user.microposts.create!(content: content) }
 end
@@ -39,7 +39,7 @@ followers.each { |follower| follower.follow(user) }
 #Fake articles
 users = User.all
 writers = users[1..20]
-50.times do
+5.times do
   content = Faker::Lorem.paragraphs(6).join(" ")
   title = (Faker::Lorem.sentence(6))
   writers.each { |user| user.articles.create!(content: content, title:title) }
