@@ -1,4 +1,6 @@
+
 <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<%= javascript_include_tag "tinymce" %>
 <script>
   tinymce.init({
     selector: '#mytextarea',
@@ -13,17 +15,12 @@
     toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
     toolbar2: 'print preview media | forecolor backcolor emoticons | table',
     image_advtab: true,
-    templates: [
-      { title: 'Test template 1', content: 'Test 1' },
-      { title: 'Test template 2', content: 'Test 2' }
-    ],
     content_css: [
       '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
       '//www.tinymce.com/css/codepen.min.css'
     ]
   });
 </script>
-<%= javascript_include_tag "tinymce" %>
 <% provide(:title, 'Write Article') %>
 <h1>Create your article</h1>
 <div class="row">
@@ -37,7 +34,7 @@
         <%= f.text_field :title, class: 'form-control' %>
 
         <%= f.label :content %>
-        <%= f.text_area :content, id: 'mytextarea', class: 'form-control', :rows => 20, :cols => 100 %>
+        <%= f.text_area :content, id: 'mytextarea', class: 'form-control', :rows => 100, :cols => 100 %>
 
 
 
