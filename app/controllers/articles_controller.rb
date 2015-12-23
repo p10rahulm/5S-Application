@@ -12,11 +12,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   def update
-
+    @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
       # Handle a successful update.
       flash[:success] = "Article updated"
-      render 'index'
+      render 'show'
     else
       render 'edit'
     end
@@ -46,13 +46,17 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     flash[:success] = "Article deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   private
 
   def article_params
     params.require(:article).permit(:content, :title)
+  end
+  def correct_user
+    @article = current_user.articles.find_by(id: params[:id])
+    redirect_to root_url if @article.nil?
   end
 
 end

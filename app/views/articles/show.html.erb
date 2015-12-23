@@ -5,9 +5,15 @@
   </div>
   <div class="col-md-9">
     <p><span class="user">Article written by: <%= link_to @article.user.name, @article.user %>.</span>
-  <span class="timestamp">
-  <%= @article.created_at.strftime("Posted on %d/%m/%Y at %I:%M%p.")%>
-  </span></p>
+    <span class="timestamp">
+    <%= @article.created_at.strftime("Posted on %d/%m/%Y at %I:%M%p.")%>
+    </span>
+      <% if current_user?(@article.user) %>
+          < <%= link_to "Edit", edit_article_path(@article) %> /
+          <%= link_to "Delete", @article, method: :delete,
+                      data: { confirm: "You sure you want to delete the article?" } %> >
+      <% end %>
+    </p>
   </div>
   <div class="col-md-9">
     <%=raw @article.content %>

@@ -1,0 +1,23 @@
+<% provide(:title, "Edit your article") %>
+<h1>Update Article</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= tinymce_assets %>
+
+    <%= form_for @article, validate: true do |f| %>
+
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+
+        <%= f.label :content %>
+        <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
+
+        <%= f.submit "Save Changes", class: "btn btn-primary" %>
+
+    <% end %>
+
+  </div>
+</div>
+<%= tinymce %>
