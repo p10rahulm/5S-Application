@@ -20,7 +20,7 @@ gem 'simple_form', '3.2.1'
 gem 'font-awesome-rails', '4.5.0'
 gem 'delayed_job_active_record'
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
-gem 'tinymce-rails', '>= 4.3.1'
+# gem 'tinymce-rails', '>= 4.3.1'
 gem 'sdoc', '0.4.0', group: :doc
 
 group :development, :test do
