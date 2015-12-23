@@ -31,7 +31,16 @@ end
 # Following relationships
 users = User.all
 user = users.first
-following = users[2..50]
-followers = users[3..40]
+following = users[2..40]
+followers = users[11..50]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+#Fake articles
+users = User.all
+writers = users[1..20]
+50.times do
+  content = Faker::Lorem.paragraphs(1)
+  title = Faker::Lorem.words(6)
+  writers.each { |user| user.articles.create!(content: content, title:title) }
+end

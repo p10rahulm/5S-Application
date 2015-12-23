@@ -1,0 +1,8 @@
+<li id="article-<%= article.id %>">
+  <span class="title"><%= article.title%></span>
+  <span class="user"><p>Article written by: <%= link_to article.user.name, article.user %></p></span>
+  <span class="timestamp">
+  <%= article.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p.")%>   #=> "Posted at 11/19/2007 at 08:37AM"
+  </span>
+  <span class="content"><%= article.content %></span>
+</li>
