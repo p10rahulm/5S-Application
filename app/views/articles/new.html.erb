@@ -11,7 +11,9 @@
         <%= f.text_field :title, class: 'form-control' %>
 
         <%= f.label :content %>
-        <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
+        <%= f.text_area :content, class: 'form-control' %>
+
+                        <!--:class => "tinymce", :rows => 40, :cols => 120 %>-->
         <!--<%= tinymce %>-->
 
         <%= f.submit "Create Article", class: "btn btn-primary" %>
