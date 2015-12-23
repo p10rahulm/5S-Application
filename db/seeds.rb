@@ -40,7 +40,7 @@ followers.each { |follower| follower.follow(user) }
 users = User.all
 writers = users[1..20]
 50.times do
-  content = Faker::Lorem.paragraphs(1)
-  title = Faker::Lorem.words(6)
+  content = Faker::Lorem.paragraph(3).join(" ")
+  title = (Faker::Lorem.word(6)).join(" ")
   writers.each { |user| user.articles.create!(content: content, title:title) }
 end

@@ -1,0 +1,12 @@
+<% provide(:title, 'All articles') %>
+<h1>All articles</h1>
+<div class="row">
+  <div class="col-md-9">
+    <%= will_paginate %>
+    <ul class="articles">
+      <%= render @articles %>
+    </ul>
+    <%= will_paginate %>
+  </div>
+
+</div>
