@@ -4,7 +4,7 @@
 <script>
   tinymce.init({
     selector: '#mytextarea',
-    height: 500,
+    height: 400,
     theme: 'modern',
     plugins: [
       'advlist autolink lists link image charmap print preview hr anchor pagebreak table',
@@ -34,7 +34,7 @@
         <%= f.text_field :title, class: 'form-control' %>
 
         <%= f.label :content %>
-        <%= f.text_area :content, id: 'mytextarea', class: 'form-control', :rows => 100, :cols => 100 %>
+        <%= f.text_area :content, id: 'mytextarea', class: 'form-control', :cols => 100 %>
 
 
 
