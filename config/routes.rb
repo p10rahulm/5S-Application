@@ -13,6 +13,7 @@
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  post '/tinymce_assets' => 'tinymce_assets#create'
 
 
   resources :users do

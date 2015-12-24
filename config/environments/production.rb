@@ -94,5 +94,7 @@ Rails.application.configure do
 
 
   config.assets.precompile += %w( tinymce.js )
+  config.assets.precompile += %w( upload_image.js )
+
 
 end

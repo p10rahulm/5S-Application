@@ -14,21 +14,23 @@ gem 'fog', '>= 1.23.0'
 gem 'uglifier', '2.5.3'
 gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
+gem 'railties', '>= 3.2'
 gem 'turbolinks','2.3.0'
 gem 'jbuilder', '2.2.3'
 gem 'simple_form', '3.2.1'
 gem 'font-awesome-rails', '4.5.0'
 gem 'delayed_job_active_record'
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
-# gem 'tinymce-rails', '>= 4.3.1'
+gem 'tinymce-rails', '>= 4.3.1'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 gem 'sdoc', '0.4.0', group: :doc
 
 group :development, :test do
   gem "pry-rails"
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
-  gem 'awesome_print', require: "ap"
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  # gem 'meta_request'
+  # gem 'awesome_print', require: "ap"
   gem 'sqlite3', '>= 1.3.9'
   gem 'byebug', '3.4.0'
   gem 'web-console', '2.0.0'

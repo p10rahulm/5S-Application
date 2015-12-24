@@ -1,11 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyText
-  content: MyText
-  user_id: 
+  title: "hello how are you"
+  content: "Impedit nobis laborum ab ut eum.
+  Temporibus qui consequuntur quis expedita soluta voluptatem.
+  Sequi voluptatem quibusdam. Qui quo ea dolorem nihil veniam.
+  Assumenda voluptatem sequi aut blanditiis. Et facere voluptatem aut incidun          "
+  user: hombalappa
+  created_at: <%= 2.hours.ago %>
 
 two:
-  title: MyText
-  content: MyText
-  user_id: 
+  title: "hi how are you"
+  content: "Blah Blah blah
+    Temporibus qui consequuntur quis expedita soluta voluptatem.
+    Sequi voluptatem quibusdam. Qui quo ea dolorem nihil veniam.
+    Assumenda voluptatem sequi aut blanditiis. Et facere voluptatem aut incidun          "
+  user: rahul
+  created_at: <%= 2.hours.ago %>
+
+#<% 34.times do |n| %>
+#micropost_<%= n %>:
+#  title: <%= (Faker::Lorem.sentence(6)) %>
+#  content: <%= Faker::Lorem.paragraphs(6).join(" ") %>
+#  created_at: <%= n.days.ago %>
+#  user_id: <%= n %>
+#<% end %>

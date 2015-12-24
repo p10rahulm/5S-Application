@@ -1,6 +1,7 @@
 <li id="article-<%= article.id %>">
   <span class="title"><%= link_to article.title, article%></span>
   <p><span class="user">
+    <!--Article written by: <b><%= link_to article.user.name, article.user %></b>.-->
     Article written by: <b><%= link_to article.user.name, article.user %></b>.
   </span>
   <span class="timestamp">

@@ -1,19 +1,20 @@
 
-<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<script type="text/javascript" src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 <%= javascript_include_tag "tinymce" %>
-<script>
+<%= javascript_include_tag "upload_image" %>
+<script type="text/javascript">
   tinymce.init({
     selector: '#mytextarea',
     height: 400,
     theme: 'modern',
     plugins: [
-      'advlist autolink lists link image charmap print preview hr anchor pagebreak table',
+      'advlist autolink lists link image charmap print preview hr anchor pagebreak table uploadimage',
       'searchreplace wordcount visualblocks visualchars code fullscreen',
       'insertdatetime media nonbreaking save table contextmenu directionality',
       'emoticons template paste textcolor colorpicker textpattern imagetools'
     ],
-    toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-    toolbar2: 'print preview media | forecolor backcolor emoticons | table',
+    toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent ',
+    toolbar2: 'print preview media | forecolor backcolor emoticons | table | link uploadimage',
     image_advtab: true,
     content_css: [
       '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
@@ -36,7 +37,7 @@
         <%= f.label :content %>
         <%= f.text_area :content, id: 'mytextarea', class: 'form-control', :cols => 100 %>
 
-
+        <%= tinymce %>
 
         <%= f.submit "Create Article", class: "btn btn-primary" %>
 
