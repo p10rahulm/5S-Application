@@ -18,10 +18,18 @@ two:
   user: rahul
   created_at: <%= 2.hours.ago %>
 
-#<% 34.times do |n| %>
-#micropost_<%= n %>:
-#  title: <%= (Faker::Lorem.sentence(6)) %>
-#  content: <%= Faker::Lorem.paragraphs(6).join(" ") %>
-#  created_at: <%= n.days.ago %>
-#  user_id: <%= n %>
-#<% end %>
+most_recent:
+  title: "howdy hombalappa"
+  content: "Bye bye miss american pie, called my chevy to the
+            levy and the levy was dry"
+  user: hombalappa
+  created_at: <%= Time.zone.now %>
+
+<% 34.times do |n| %>
+article_<%= n %>:
+  title: <%= (Faker::Lorem.sentence(6)) %>
+  content: <%= Faker::Lorem.paragraphs(6).join(" ") %>
+  created_at: <%= (4+n).hours.ago %>
+  user: rahul
+<% end %>
+

@@ -21,6 +21,12 @@ class ArticleTest < ActiveSupport::TestCase
     @article.content = nil
     assert_not @article.valid?
   end
-
+  test "order should be most recent first" do
+    assert_equal articles(:most_recent), Article.first
+  end
+  test "title should not be too long" do
+    @article.title = "a"*257
+    assert_not  @article.valid?
+  end
 
 end

@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:new, :edit, :update, :destroy, :create]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:destroy, :edit, :update,]
+
 
   def new
     @article = Article.new
   end
   def index
-    @articles = Article.paginate(page: params[:page])
+    @articles = Article.paginate(page: params[:page], :per_page => 15)
   end
   def edit
     @article = Article.find(params[:id])
@@ -18,6 +19,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article updated"
       render 'show'
     else
+      flash[:danger] = "Your article must have title and contents"
       render 'edit'
     end
   end
@@ -29,7 +31,8 @@ class ArticlesController < ApplicationController
     else
       # @feed_items = []
       # render 'static_pages/home'
-      super
+      flash[:danger] = "There were errors in your submission"
+      redirect_to new_article_path
     end
   end
 

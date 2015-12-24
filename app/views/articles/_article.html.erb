@@ -6,7 +6,18 @@
   </span>
   <span class="timestamp">
    Posted on <i> <%= article.created_at.strftime("%d/%m/%Y at %I:%M%p")%> </i>.
-  </span></p>
+  </span>
+    <% if current_user?(article.user) %>
+        <span class="EditArticle-Link">
+        <%= link_to "edit", edit_article_path(article), method: :get %>
+          </span>
+        <span class="DeleteArticle-Link">
+        <%= link_to "delete", article, method: :delete,
+                    data: { confirm: "You sure?" } %>
+          </span>
+
+    <% end %>
+  </p>
   <span class="content">
     <p><%= truncate(strip_tags(strip_links(article.content)), :length => 230, :omission => "" , :escape => true) %><br></p>
   </span>

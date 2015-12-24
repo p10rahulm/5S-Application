@@ -9,9 +9,11 @@
     <%= @article.created_at.strftime("Posted on %d/%m/%Y at %I:%M%p.")%>
     </span>
       <% if current_user?(@article.user) %>
-          < <%= link_to "Edit", edit_article_path(@article) %> /
+          <span class="Edit-Link">
+          < <%= link_to "Edit", edit_article_path(@article) %> </span>/
+          <span class="Delete-Link">
           <%= link_to "Delete", @article, method: :delete,
-                      data: { confirm: "You sure you want to delete the article?" } %> >
+                      data: { confirm: "You sure you want to delete the article?" } %> ></span>
       <% end %>
     </p>
   </div>
