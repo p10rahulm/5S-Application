@@ -95,6 +95,8 @@ Rails.application.configure do
 
   config.assets.precompile += %w( tinymce.js )
   config.assets.precompile += %w( upload_image.js )
-  config.assets.precompile += %w[tinymce/tiny_mce.js
+  config.assets.precompile += %w[tinymce/tiny_mce.js]
+
+  config.assets.raise_runtime_errors = false
 
 end
