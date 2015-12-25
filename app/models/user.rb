@@ -132,8 +132,11 @@ class User < ActiveRecord::Base
   end
 
   def avatar_size
-    if avatar.size > 3.megabytes
-      errors.add(:picture, "should be less than 3MB")
+    if !avatar.nil?
+      if  avatar.size > 3.megabytes
+        errors.add(:picture, "should be less than 3MB")
+      end
     end
   end
+
 end

@@ -9,7 +9,7 @@ module UsersHelper
 
   def avatar_for(user, options = {size:80})
 
-    if user.avatar?    then
+    if user.avatar? && !user.avatar.nil?  then
       if options[:size]==50 then
         image_tag(user.avatar.url(:smavatar), alt: user.name, class: "avatar")
       else

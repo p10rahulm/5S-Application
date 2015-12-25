@@ -6,10 +6,19 @@
         <%= render 'fields', f:f %>
     <div class="avatar_edit">
       <%= avatar_for @user %>
+      <% if !@user.avatar.url.nil? %>
+      <span class="removatarchkbx">
+        <label>
+          <%= f.check_box :remove_avatar %>
+          Remove avatar
+        </label>
+      </span>
+      <% end %>
       <span class="avatar_upload">
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
       </span>
+
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
     </div>
